@@ -6,15 +6,18 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
-    id("com.android.library")
+//    id("android-base-convention")
+    id("com.android.kotlin.multiplatform.library")
     id("org.jetbrains.kotlin.multiplatform")
-    id("android-base-convention")
     id("dev.icerock.mobile.multiplatform.android-manifest")
 }
 
 kotlin {
+    androidLibrary {
+        compileSdk = 33
+    }
     jvm()
-    androidTarget()
+//    androidTarget()
     iosX64()
     iosArm64()
     iosSimulatorArm64()

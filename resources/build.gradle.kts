@@ -13,6 +13,9 @@ plugins {
 }
 
 kotlin {
+    androidLibrary {
+        namespace = "dev.icerock.moko.resources"
+    }
     sourceSets {
         commonJsMain.dependencies {
             implementation(libs.kotlinxCoroutines)
@@ -29,10 +32,10 @@ kotlin {
         }
     }
 }
-
-android {
-    namespace = "dev.icerock.moko.resources"
-}
+//
+//android {
+//    namespace = "dev.icerock.moko.resources"
+//}
 
 dependencies {
     commonMainApi(libs.mokoGraphics)

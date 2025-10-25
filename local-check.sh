@@ -18,7 +18,7 @@ log "plugin build and publish success"
 ./gradlew detekt
 log "runtime detekt success"
 
-./gradlew assembleDebug
+./gradlew assemble
 log "runtime android success"
 
 ./gradlew jvmJar

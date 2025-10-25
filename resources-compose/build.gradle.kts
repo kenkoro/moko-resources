@@ -3,9 +3,9 @@
  */
 
 plugins {
-    id("com.android.library")
+    id("com.android.kotlin.multiplatform.library")
     id("org.jetbrains.kotlin.multiplatform")
-    id("android-base-convention")
+//    id("android-base-convention")
     id("dev.icerock.mobile.multiplatform.android-manifest")
     id("multiplatform-android-publish-convention")
     id("apple-main-convention")
@@ -13,19 +13,23 @@ plugins {
     id("org.jetbrains.compose")
     id("javadoc-stub-convention")
     id("publication-convention")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
-android {
-    defaultConfig {
-        minSdk = 21
-    }
-
-    namespace = "dev.icerock.moko.resources.compose"
-}
+//android {
+//    defaultConfig {
+//        minSdk = 21
+//    }
+//
+//    namespace = "dev.icerock.moko.resources.compose"
+//}
 
 kotlin {
     jvm()
-    androidTarget()
+    androidLibrary {
+        namespace = "dev.icerock.moko.resources.compose"
+    }
+//    androidTarget()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
